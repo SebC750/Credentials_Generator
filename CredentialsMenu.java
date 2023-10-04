@@ -24,7 +24,7 @@ public class CredentialsMenu {
     JButton passwordRandomButton = new JButton("Randomize");
     JButton exitButton = new JButton("Exit Program");
     
-    Border inputBorder = BorderFactory.createLineBorder(new Color(20,190,255),5);
+    Border inputBorder = BorderFactory.createLineBorder(new Color(150,80,255),5);
     
     public CredentialsMenu() {
     	mainMenu.setSize(600, 600);
@@ -37,11 +37,12 @@ public class CredentialsMenu {
 
         title.setBounds(0, 0, 600, 50);
         exitPanel.setBounds(420,500,150,50);
-        inputTextPanel.setBounds(0, 50, 600, 150);
+        inputTextPanel.setBounds(0, 50, 585, 200);
         inputTextPanel.setBorder(inputBorder);
-        usernamePanel.setBounds(-50, 100, 400, 20);
-        passwordPanel.setBounds(-50, 150, 400, 20);
+        usernamePanel.setBounds(50, 100, 200, 50);
+        passwordPanel.setBounds(50, 150, 200, 50);
  
+
         welcomeText.setFont(new Font("Monospaced", Font.BOLD, 16));
         welcomeText.setForeground(Color.white);
         inputPromptText.setFont(new Font("Monospaced", Font.BOLD, 10));
@@ -56,12 +57,12 @@ public class CredentialsMenu {
         inputTextPanel.setBackground(new Color(100, 55, 90));
         usernamePanel.setBackground(new Color(100, 55, 90));
         passwordPanel.setBackground(new Color(100, 55, 90));
-
-
+        
+        
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
         exitButton.setBorderPainted(false);
-        
+        exitButton.setForeground(Color.white);
 
         ActionListener exitProgram = new ClickListener();
         exitButton.addActionListener(exitProgram);
@@ -74,7 +75,9 @@ public class CredentialsMenu {
         title.add(welcomeText, BorderLayout.CENTER);
         inputTextPanel.add(inputPromptText);
         usernamePanel.add(userNameText);
+        usernamePanel.add(userNameRandomButton);
         passwordPanel.add(passwordText);
+        passwordPanel.add(passwordRandomButton);
         inputTextPanel.add(usernamePanel);
         inputTextPanel.add(passwordPanel);
 
