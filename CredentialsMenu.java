@@ -63,13 +63,15 @@ public class CredentialsMenu {
         exitButton.setContentAreaFilled(false);
         exitButton.setBorderPainted(false);
         exitButton.setForeground(Color.white);
+        
 
         ActionListener exitProgram = new ClickListener();
         exitButton.addActionListener(exitProgram);
         exitButton.addActionListener(e -> {
             mainMenu.dispose();
         });
-
+        
+        ActionListener userRandomize = new UserRandomizeListener();
 
         exitPanel.add(exitButton);
         title.add(welcomeText, BorderLayout.CENTER);
@@ -93,6 +95,20 @@ public class CredentialsMenu {
        
         public void actionPerformed(ActionEvent e) {
                 
+            }
+        }
+    class UserRandomizeListener implements ActionListener {
+
+       
+        public void actionPerformed(ActionEvent e) {
+                Username newUser = new Username();
+            }
+        }
+    class PassRandomizeListener implements ActionListener {
+
+       
+        public void actionPerformed(ActionEvent e) {
+                Password newPass = new Password();
             }
         }
     }
