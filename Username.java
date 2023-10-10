@@ -41,8 +41,13 @@ public class Username {
         };
         Random randomCharacters = new Random();
         String newUsername = "";
-        
-        for(int i = 0; i < alphabetAndNumbers.length; i++){
+        int userNameSize = randomCharacters.nextInt(35);
+        if(userNameSize < 10){
+          do{
+            userNameSize = randomCharacters.nextInt(35);
+          }while(userNameSize < 10);
+        }
+        for(int i = 0; i < userNameSize; i++){
           int indexSelection = randomCharacters.nextInt(35); 
             newUsername += alphabetAndNumbers[indexSelection];
         }
